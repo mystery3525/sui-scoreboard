@@ -19,6 +19,7 @@ Version 2.7 - 2023-06-06 8:00 PM(UTC -03:00)
 if SERVER then
   AddCSLuaFile()
   hook.Add("PlayerInitialSpawn", "SUISCOREBOARD-Spawn", Scoreboard.PlayerSpawn)
+  hook.Add("PlayerDisconnected", "SUISCOREBOARD-Leave", Scoreboard.PlayerLeave)
   Scoreboard.SendColor = function (ply)   
     tColor = team.GetColor( ply:Team())   
 

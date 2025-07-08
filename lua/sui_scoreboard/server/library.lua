@@ -20,8 +20,18 @@ util.AddNetworkString( "SUIScoreboardPlayerConnecting" )
 
 --- When the player joins the server we need to restore the NetworkedInt's
 Scoreboard.PlayerSpawn = function ( ply )
-  timer.Simple( 5, function() Scoreboard.UpdatePlayerRatings( ply ) end) -- Wait a few seconds so we avoid timeouts.
-  timer.Simple( 5, function() Scoreboard.SendColor(ply) end)
+	timer.Create( "SuiUpdatePlayer.".. ply:SteamID64(), 5, 0, function()
+		Scoreboard.UpdatePlayerRatings( ply )
+		Scoreboard.SendColor( ply )
+		Scoreboard.UpdatePlayerGamemode( ply )
+	end) -- Wait a few seconds so we avoid timeouts.
+end
+
+Scoreboard.PlayerLeave = function ( ply )
+	local eventName = "SuiUpdatePlayer.".. ply:SteamID64()
+	if timer.Exists( name ) then
+		timer.Remove( name )
+	end
 end
 
 gameevent.Listen( "player_connect" )

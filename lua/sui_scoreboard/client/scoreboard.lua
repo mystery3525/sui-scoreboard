@@ -80,6 +80,9 @@ function PANEL:Init()
 	self.lblHealth = vgui.Create( "DLabel", self )
 	self.lblHealth:SetText( "Health" )
 
+	self.lblGamemode = vgui.Create( "DLabel", self )
+	self.lblGamemode:SetText( "Gamemode" )
+
 	self.lblHours = vgui.Create( "DLabel", self )
 	self.lblHours:SetText( "Total Time Connected" )
 	
@@ -228,6 +231,7 @@ function PANEL:PerformLayout()
 	self.lblRatio:SizeToContents()
 	self.lblDeaths:SizeToContents()
 	self.lblHealth:SizeToContents()
+	self.lblGamemode:SizeToContents()
 	self.lblHours:SizeToContents()
 	self.lblTeam:SizeToContents()
 	
@@ -238,8 +242,9 @@ function PANEL:PerformLayout()
 	self.lblDeaths:SetPos( self:GetWide() - COLUMN_SIZE*4.4 - self.lblDeaths:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
 	self.lblKills:SetPos( self:GetWide() - COLUMN_SIZE*5.4 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
 	self.lblHealth:SetPos( self:GetWide() - COLUMN_SIZE*6.4 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
-	self.lblHours:SetPos( self:GetWide() - COLUMN_SIZE*10.2 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
-	self.lblTeam:SetPos( self:GetWide() - COLUMN_SIZE*16 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
+	self.lblGamemode:SetPos( self:GetWide() - COLUMN_SIZE*7.8 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
+	self.lblHours:SetPos( self:GetWide() - COLUMN_SIZE*11.6 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
+	self.lblTeam:SetPos( self:GetWide() - COLUMN_SIZE*17.4 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
 end
 
 --- ApplySchemeSettings
@@ -268,6 +273,7 @@ function PANEL:ApplySchemeSettings()
 	self.lblHealth:SetFont( "DefaultSmall" )
 	self.lblRatio:SetFont( "DefaultSmall" )
 	self.lblHours:SetFont( "DefaultSmall" )
+	self.lblGamemode:SetFont( "DefaultSmall" )
 	
 	self.lblPing:SetColor( Color( 0, 0, 0, 255 ) )
 	self.lblKills:SetColor( Color( 0, 0, 0, 255 ) )
@@ -276,6 +282,7 @@ function PANEL:ApplySchemeSettings()
 	self.lblHealth:SetColor( Color( 0, 0, 0, 255 ) )
 	self.lblRatio:SetColor( Color( 0, 0, 0, 255 ) )
 	self.lblHours:SetColor( Color( 0, 0, 0, 255 ) )
+	self.lblGamemode:SetColor( Color( 0, 0, 0, 255 ) )
 	
 	self.lblPing:SetFGColor( Color( 0, 0, 0, 255 ) )
 	self.lblKills:SetFGColor( Color( 0, 0, 0, 255 ) )
@@ -284,6 +291,7 @@ function PANEL:ApplySchemeSettings()
 	self.lblHealth:SetFGColor( Color( 0, 0, 0, 255 ) )
 	self.lblRatio:SetFGColor( Color( 0, 0, 0, 255 ) )
 	self.lblHours:SetFGColor( Color( 0, 0, 0, 255 ) )
+	self.lblGamemode:SetFGColor( Color( 0, 0, 0, 255 ) )
 end
 
 --- UpdateScoreboard

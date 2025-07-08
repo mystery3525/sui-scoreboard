@@ -65,6 +65,7 @@ if SERVER then
   AddCSLuaFile("sui_scoreboard/client/library.lua")
   AddCSLuaFile("sui_scoreboard/client/net_client.lua")
   include( "sui_scoreboard/server/rating.lua" )
+  include( "sui_scoreboard/server/buildmode.lua" )
   include( "sui_scoreboard/server/library.lua" )
 else
   Scoreboard.vgui = nil
