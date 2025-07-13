@@ -4,11 +4,11 @@ Scoreboard.UpdatePlayerGamemode = function( ply )
 		return false
 	end
 
-	local gamemode = "PVPer"
+	local gamemode = "PVP"
 	if ply.buildmode == nil then
 		gamemode = "???"
 	elseif ply.buildmode == true then
-		gamemode = "Builder"
+		gamemode = "Build"
 	end
 
 
