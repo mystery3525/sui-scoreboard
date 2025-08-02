@@ -196,7 +196,7 @@ function PANEL:ShowMicVolumeSlider()
    currentPlayerVolume = currentPlayerVolume ~= nil and currentPlayerVolume or 1
 
    -- Frame for the slider
-   local frame = vgui.Create("DFrame")
+   local frame = vgui.Create("DFrame", self)
    frame:SetPos(x, y)
    frame:SetSize(width, height)
    frame:MakePopup()
