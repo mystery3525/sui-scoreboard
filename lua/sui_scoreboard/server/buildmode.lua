@@ -4,13 +4,14 @@ Scoreboard.UpdatePlayerGamemode = function( ply )
 		return false
 	end
 
-	local gamemode = "PVP"
+	local gamemode = ply.buildmode
 	if ply.buildmode == nil then
 		gamemode = "???"
 	elseif ply.buildmode == true then
 		gamemode = "Build"
+	elseif ply.buildmode == false then
+		gamemode = "PVP"
 	end
-
 
 	ply:SetNWString( "SuiGamemode", gamemode )
 end
